@@ -116,7 +116,7 @@ export const StyledContentTitle = styled(
 
 export const StyledContentTail = styled(
   'div',
-  ({$theme, $isCompleted}: StyledStepPropsT) => {
+  ({$theme, $isCompleted, $isActive}: StyledStepPropsT) => {
     let currentColor = $theme.colors.mono400;
 
     if ($isCompleted) {
@@ -130,7 +130,7 @@ export const StyledContentTail = styled(
       height: '100%',
       paddingBottom: '0px',
       width: $theme.sizing.scale0,
-      paddingTop: $theme.sizing.scale600,
+      paddingTop: $isActive ? $theme.sizing.scale700 : $theme.sizing.scale600,
       ':after': {
         content: '""',
         display: 'inline-block',
